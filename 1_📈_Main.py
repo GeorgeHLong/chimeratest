@@ -30,6 +30,7 @@ usernames = ["pparker", "rmiller","bharath"]
 file_path = Path(__file__).parent / "hashed_pw.pkl"
 with file_path.open("rb") as file:
     hashed_passwords = pickle.load(file)
+    st.write(hashed_passwords)
 
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
     "SIPL_dashboard", "abcdef")
